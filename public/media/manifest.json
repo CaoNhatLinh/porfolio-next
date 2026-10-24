@@ -1,0 +1,10 @@
+{
+  "sourceRoot": "E:/WORKSPACE/portfolio/a/public/images",
+  "assets": [
+    { "file": "profile.jpg", "url": "/media/profile.jpg", "alt": "Cao Nhật Linh profile portrait", "origin": "Laravel source", "width": 2133, "height": 2560 },
+    { "file": "tutor-connect.jpg", "url": "/media/tutor-connect.jpg", "alt": "Tutor Connect project interface", "origin": "Laravel source", "width": 2644, "height": 2478 },
+    { "file": "zing-music.png", "url": "/media/zing-music.png", "alt": "Zing Music project interface", "origin": "Laravel source", "width": 408, "height": 871 },
+    { "file": "motorcycle-store.png", "url": "/media/motorcycle-store.png", "alt": "Motorcycle Store project interface", "origin": "Laravel source", "width": 1919, "height": 877 },
+    { "file": "bus-management.png", "url": "/media/bus-management.png", "alt": "Bus Management project interface", "origin": "Laravel source", "width": 780, "height": 439 }
+  ]
+}

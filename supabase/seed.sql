@@ -1,0 +1,4 @@
+-- The canonical seed is scripts/seed-supabase.mjs because it resolves the
+-- single owner from Supabase Auth without putting a user UUID in git.
+-- Run after applying migrations:
+--   npm run db:seed

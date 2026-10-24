@@ -1,0 +1,19 @@
+.mark { display: grid; place-items: center; width: 28px; height: 28px; color: inherit; background: transparent; border: 0; opacity: .55; cursor: pointer; }
+.mark:hover, .mark:focus-visible { opacity: 1; outline: 1px solid currentColor; outline-offset: 2px; }
+.panel { position: fixed; z-index: 100; bottom: 24px; right: 24px; width: min(280px, calc(100vw - 32px)); padding: 20px; background: #f5efde; color: #24372e; border: 1px solid #9eac95; box-shadow: 6px 6px 0 #24372e; font: 14px/1.6 var(--body); text-transform: none; letter-spacing: normal; }
+.heading { display: flex; align-items: center; justify-content: space-between; font: 11px var(--mono); }
+.heading button { width: 44px; height: 44px; cursor: pointer; font-size: 24px; }
+.lock { display: grid; justify-items: center; color: #937b5d; margin: 12px 0; }
+.lock > span { line-height: 1; }
+.lock button { width: 88px; height: 88px; cursor: pointer; }
+.lock svg { width: 100%; transition: transform 260ms ease-out; }
+.lock[data-aligned="true"] { color: #ad5217; }
+.panel code { display: block; text-align: center; padding: 8px; border-block: 1px dashed #9eac95; font-size: 14px; }
+.save { width: 100%; background: #24372e; color: #fff6dc; padding: 12px; margin-top: 12px; cursor: pointer; }
+.save:disabled { opacity: .65; cursor: default; }
+.panel button:focus-visible { outline: 3px solid #bf6c24; outline-offset: 3px; }
+.status { display: block; font-size: 12px; margin-top: 8px; }
+.panel { max-height: calc(100dvh - 48px); overflow-y: auto; overscroll-behavior: contain; }
+@media(max-width:480px) { .panel { bottom: 16px; right: 16px; } }
+@media(prefers-reduced-motion:reduce) { .lock svg { transition: none; } }
+@media print { .panel { display: none; } }

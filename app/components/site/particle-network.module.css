@@ -1,0 +1,27 @@
+.network {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(110deg, rgb(0 0 0 / 20%), #000 65%);
+}
+
+.network canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.network[data-state="idle"],
+.network[data-state="static"] {
+  background-image: radial-gradient(circle, rgb(167 170 162 / 28%) 1px, transparent 1.5px),
+    radial-gradient(circle, rgb(255 138 31 / 32%) 1px, transparent 1.5px);
+  background-size: 72px 72px, 216px 216px;
+  background-position: 12px 20px, 60px 80px;
+}
+
+@media (max-width: 767px) {
+  .network { opacity: 0.65; }
+}

@@ -1,0 +1,23 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Local portfolio configuration</title>
+<h1>Lưu cấu hình trên máy của bạn</h1>
+<p>Trang tạm chỉ chuyển key tới tiến trình local trên cùng máy, không gửi tới dịch vụ bên ngoài.</p>
+<form method="post" action="/config">
+<label>Public key <input name="publicKey" id="public-key" type="password" autocomplete="off"></label>
+<label>Server key <input name="serverKey" id="server-key" type="password" autocomplete="off"></label>
+<button type="submit">Save local configuration</button></form>
+<button id="download" type="button">Download local config</button>
+<p id="result" role="status"></p>
+<script>
+document.getElementById('download').addEventListener('click', () => {
+  const publicKey = document.getElementById('public-key').value.trim();
+  const serverKey = document.getElementById('server-key').value.trim();
+  if (!publicKey || !serverKey || /[\r\n]/.test(publicKey + serverKey)) {
+    document.getElementById('result').textContent = 'Cần đủ hai key hợp lệ.';
+    return;
+  }
+  const config = 'NEXT_PUBLIC_SITE_URL=http://localhost:3002\nNEXT_PUBLIC_SUPABASE_URL=https://ufudouwkakgpktznwjqd.supabase.co\nNEXT_PUBLIC_SUPABASE_ANON_KEY=' + publicKey + '\nSUPABASE_SERVICE_ROLE_KEY=' + serverKey + '\nADMIN_EMAIL=caonhatlinh1312@gmail.com\nCONTACT_NOTIFICATION_EMAIL=caonhatlinh1312@gmail.com\n';
+  const file = URL.createObjectURL(new Blob([config], {type: 'text/plain'}));
+  const link = document.createElement('a'); link.href = file; link.download = 'kamling-portfolio.env'; link.textContent = 'Save config'; document.body.appendChild(link);
+  document.getElementById('result').textContent = 'Đã tạo file cấu hình local.';
+});
+</script></html>

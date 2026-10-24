@@ -1,0 +1,83 @@
+{
+  "source": "E:/WORKSPACE/portfolio/a",
+  "reviewedAt": "2026-08-29",
+  "profile": {
+    "name": "Cao Nhật Linh",
+    "title": {
+      "vi": "Lập trình viên full-stack",
+      "en": "Full-stack developer"
+    },
+    "email": "caonhatlinh1312@gmail.com",
+    "image": "/media/profile.jpg"
+  },
+  "projects": [
+    {
+      "slug": "novachat",
+      "title": "NovaChat",
+      "category": "Backend system",
+      "year": "2026",
+      "isFeatured": true,
+      "image": "/media/novachat-cover-v1.png",
+      "sourceMedia": "generated-concept"
+    },
+    {
+      "slug": "social-publishing-platform",
+      "title": "Social Publishing Platform",
+      "category": "Web application",
+      "year": "2025–2026",
+      "isFeatured": true,
+      "image": "/media/platforms-manage-cover-v1.png",
+      "sourceMedia": "generated-concept"
+    },
+    {
+      "slug": "squareup",
+      "title": "SquareUp",
+      "category": "Web application",
+      "year": "2025",
+      "isFeatured": false,
+      "image": "/media/squareup-cover-v1.png",
+      "sourceMedia": "generated-concept"
+    },
+    {
+      "slug": "tutor-connect",
+      "title": "Tutor Connect",
+      "category": "Mobile application",
+      "year": "2025",
+      "isFeatured": true,
+      "image": "/media/tutor-connect-portfolio-v2.png",
+      "sourceMedia": "generated-reconstruction"
+    },
+    {
+      "slug": "zing-music",
+      "title": "Zing Music",
+      "category": "Mobile application",
+      "year": "2023",
+      "isFeatured": false,
+      "image": "/media/zing-music-portfolio-v2.png",
+      "sourceMedia": "generated-reconstruction"
+    },
+    {
+      "slug": "motorcycle-store",
+      "title": "Motorcycle Store",
+      "category": "Web application",
+      "year": "2022",
+      "isFeatured": false,
+      "image": "/media/motorcycle-store-portfolio-v2.png",
+      "sourceMedia": "generated-reconstruction"
+    },
+    {
+      "slug": "bus-management",
+      "title": "Bus Management",
+      "category": "Backend system",
+      "year": "2021",
+      "isFeatured": false,
+      "image": "/media/bus-management-portfolio-v2.png",
+      "sourceMedia": "generated-reconstruction"
+    }
+  ],
+  "rules": [
+    "Only facts represented in the Laravel source or linked repositories are published.",
+    "Generated template images are layout references and are never used as project evidence.",
+    "Unverified outcomes remain qualitative copy instead of invented metrics."
+  ]
+}

@@ -1,0 +1,2 @@
+"use client";
+export default function AdminError({ reset }: { reset: () => void }) { return <section role="alert" className="rounded-xl border border-red-200 bg-white p-7"><h1 className="text-2xl font-semibold">Không tải được dữ liệu quản trị</h1><p className="mt-3 max-w-xl text-sm text-black/65">Kiểm tra cấu hình Supabase, service role và các migration. Lỗi kết nối không có nghĩa là nội dung của bạn đã bị xóa.</p><button type="button" onClick={reset} className="button-accent mt-5">Thử lại</button></section>; }

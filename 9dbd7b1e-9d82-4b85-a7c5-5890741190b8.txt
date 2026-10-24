@@ -1,0 +1,6 @@
+NEXT_PUBLIC_SITE_URL=http://localhost:3002
+NEXT_PUBLIC_SUPABASE_URL=https://ufudouwkakgpktznwjqd.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<redacted>
+SUPABASE_SERVICE_ROLE_KEY=<redacted>
+ADMIN_EMAIL=caonhatlinh1312@gmail.com
+CONTACT_NOTIFICATION_EMAIL=caonhatlinh1312@gmail.com

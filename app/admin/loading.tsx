@@ -1,0 +1,1 @@
+export default function AdminLoading() { return <div className="grid min-h-[50vh] place-items-center"><p className="mono animate-pulse text-xs uppercase tracking-[.2em] text-black/45">Loading studio</p></div>; }

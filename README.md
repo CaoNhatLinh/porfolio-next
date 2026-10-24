@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cao Nhat Linh Portfolio
 
-## Getting Started
+A multi-page developer portfolio built with Next.js 16 App Router. It includes an art-directed bilingual public site, project case studies, technical writing, a Supabase-backed private content area, contact delivery through Resend, and privacy-conscious analytics.
 
-First, run the development server:
+## Planning entry points
 
-```bash
+- [Documentation index](./docs/README.md)
+- [Product specification](./docs/product-spec.md)
+- [Architecture](./docs/architecture.md)
+- [Design system](./docs/design-system.md)
+- [Roadmap](./tasks/plan.md)
+- [Task checklist](./tasks/todo.md)
+- [Vercel deployment runbook](./docs/deployment.md)
+- [Visual templates](./img%20template/README.md)
+
+## Local development
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run typecheck
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The full dependency, environment, migration, and release matrix is documented in [`docs/dependencies.md`](./docs/dependencies.md).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/` art-directed bilingual landing page
+- `/work` project index with featured priority
+- `/work/[slug]` case studies
+- `/about` profile, principles, experience, and lab
+- `/resume` bilingual, print-friendly CV with evidence links and availability
+- `/hire` focused hiring brief flow with intent, timeline, Resend delivery, and Supabase inbox
+- `/journal` and `/journal/[slug]` technical notes
+- `/contact` validated contact form with email delivery boundary
+- `/login` and `/admin/*` private Supabase Auth workspace
+- `/admin/projects/new`, `/admin/articles/new` create draft content; editor pages support bilingual fields, featured/sort order, galleries, and case-study sections
+- `/admin/lab` owner-only Lab experiment editor with publish state and demo/repository links
+- `/preview/projects/[id]` and `/preview/articles/[id]` owner-only noindex draft previews
 
-## Learn More
+Without Supabase environment variables, public pages use the verified Laravel-derived fixture content so the design can be reviewed locally. Once the Supabase migration and seed are applied, published records take precedence.
 
-To learn more about Next.js, take a look at the following resources:
+## Source content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Verified profile and project content has been staged from the Laravel source at `E:/WORKSPACE/portfolio/a`. Generated templates under [`img template`](./img%20template/README.md) are visual references only and must not be treated as factual project data.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy `.env.example` to `.env.local`, fill the Supabase and Resend values, and set `ADMIN_EMAIL` to the one owner account. Never expose `SUPABASE_SERVICE_ROLE_KEY` to client code.

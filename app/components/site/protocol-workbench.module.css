@@ -1,0 +1,23 @@
+.bench { margin-top: 24px; border-top: 3px solid var(--op-accent); background: var(--op-raised); padding: 20px; color: var(--op-ink); }
+.header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.header h3 { font-size: 20px; font-weight: 600; }
+.header > span { font: 12px var(--mono); }
+.bench .pieces { list-style: none; padding: 0; margin: 20px 0; }
+.bench .pieces li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--op-line); font-size: 12px; cursor: grab; }
+.pieces li:active { cursor: grabbing; }
+.pieces li > div:nth-child(2) { flex: 1; min-width: 0; }
+.pieces code { display: block; letter-spacing: .04em; font-size: 12px; }
+.index { font: 18px var(--mono); opacity: .55; }
+.arrows { display: flex; }
+.arrows button { min-width: 32px; min-height: 44px; cursor: pointer; }
+.arrows button:disabled { opacity: .25; cursor: default; }
+.switches { border: 0; padding: 0; display: grid; grid-template-columns: repeat(8,minmax(0,1fr)); gap: 4px; }
+.switches legend { margin-bottom: 12px; font-size: 12px; }
+.switches button { min-height: 44px; background: var(--op-ground); border: 1px solid var(--op-line); font: 16px var(--mono); cursor: pointer; }
+.switches button[aria-pressed="true"] { background: var(--op-accent); color: var(--op-dark); border-color: var(--op-accent); }
+.bench button:focus-visible { outline: 3px solid var(--op-accent); outline-offset: 2px; }
+.output { margin-top: 20px; background: var(--op-ground); color: var(--op-accent); padding: 16px; }
+.output > span { display: block; font: 11px var(--mono); opacity: .7; margin-bottom: 8px; }
+.output output { font: 24px var(--mono); letter-spacing: .15em; overflow-wrap: anywhere; }
+.bench .feedback { min-height: 24px; font-size: 12px; }
+@media(max-width:400px) { .bench { padding: 12px; } .bench .pieces li { gap: 6px; } .pieces code { font-size: 11px; } .arrows button { min-width: 28px; } }

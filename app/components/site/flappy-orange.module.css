@@ -1,0 +1,62 @@
+.arcade {
+  --arcade-surface: #f5f0de;
+  --arcade-ink: #34332f;
+  --arcade-muted: #64635a;
+  --arcade-border: #b9b6a5;
+  --arcade-accent: #ff8b20;
+  display: grid; grid-template-columns: .85fr 1.15fr; gap: 4rem; align-items: center;
+  font-family: var(--font-play-body), Arial, sans-serif;
+  color: var(--arcade-ink); padding: 4rem 0 5rem;
+}
+.notes h2 { font-family: var(--font-play-brush), cursive; font-size: clamp(4rem, 6.5vw, 7rem); font-weight: 400; line-height: .95; letter-spacing: -.025em; margin: 1rem 0 1.5rem; max-width: 7ch; transform: rotate(-3deg); }
+.notes h2 span { color: #c45a1b; }
+.notes .scribble { font-family: var(--font-play-brush), cursive; font-size: 1.5rem; color: #a44316; transform: rotate(-3deg); margin-bottom: 1.5rem; }
+.notes > p { max-width: 26rem; line-height: 1.7; }
+.records { display: flex; gap: 3rem; margin: 2rem 0; border-top: 3px dashed var(--arcade-border); padding-top: 1.5rem; }
+.records dt { font-size: 0.8rem; color: var(--arcade-muted); }
+.records dd { font-family: var(--font-play-brush), cursive; font-size: 4rem; line-height: 1.2; }
+.instructions { font-size: 0.85rem; color: var(--arcade-muted); }
+.machine { background: #fffaf0; padding: .75rem; width: 100%; max-width: 30rem; justify-self: center; border: 3px solid var(--arcade-ink); border-radius: 2% 3% 2% 1% / 1% 2% 1% 3%; box-shadow: 5px 6px 0 #34332f; }
+.machineLabel { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem; color: var(--arcade-ink); font-family: var(--font-play-body), Arial, sans-serif; font-size: .75rem; font-weight: 700; line-height: 1.6; letter-spacing: .015em; padding: .25rem .25rem .75rem; }
+.machineLabel > span:last-child { text-align: right; }
+.screen { position: relative; width: 100%; background: var(--arcade-surface); aspect-ratio: 3 / 4; overflow: hidden; touch-action: manipulation; }
+.screen[data-phase="playing"] { touch-action: none; cursor: pointer; }
+.screen:focus-visible { outline: 3px solid var(--arcade-accent); outline-offset: 4px; }
+.screen canvas { display: block; width: 100%; height: 100%; }
+.overlay { position: absolute; inset: auto 6% 17%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; background: #fffaf0; color: var(--arcade-ink); padding: 1.25rem .75rem; text-align: center; border: 3px solid var(--arcade-ink); border-radius: 3% 1% 4% 2%; box-shadow: 3px 4px 0 var(--arcade-ink); }
+.screen[data-phase="over"] .overlay { transform: rotate(-2deg); inset: auto 6% 14%; }
+.crashDoodle { font: 3rem/1 var(--font-play-brush), cursive; color: #aa481b; transform: rotate(8deg); }
+.result { display: flex; width: 100%; justify-content: space-evenly; gap: 1rem; border-block: 2px dashed #c9bca5; padding: .5rem 0; }
+.result > span { display: flex; flex-direction: column; font-size: .75rem; }
+.result strong { font-family: var(--font-play-brush), cursive; font-size: 2.75rem; font-weight: 400; line-height: 1; }
+.overlay small { font-size: .75rem; }
+.screen[data-phase="ready"] .overlay { top: 7%; bottom: auto; }
+.hud { position: absolute; top: 7%; left: 0; width: 100%; text-align: center; font: 700 2.5rem var(--font-mono), monospace; color: #fff6df; text-shadow: 2px 2px 0 #213b34, -2px -2px 0 #213b34; pointer-events: none; }
+.machine[data-theme="night"] { background: #253749; }
+.machine[data-theme="night"] .machineLabel, .machine[data-theme="night"] .controls { color: #fff2d4; }
+.overlay p { font-weight: 900; font-size: clamp(1rem, 2vw, 1.4rem); line-height: 1.25; }
+.overlay button { background: var(--arcade-ink); color: var(--arcade-surface); min-height: 48px; padding: .6rem 1.25rem; border: 2px solid var(--arcade-ink); border-radius: 45% 8% 40% 6% / 10% 45% 12% 40%; font-weight: 800; cursor: pointer; }
+.overlay button:hover { background: var(--arcade-accent); color: var(--arcade-ink); }
+.overlay button:focus-visible, .controls button:focus-visible { outline: 3px solid var(--arcade-accent); outline-offset: 3px; }
+.controls { display: flex; gap: .5rem; align-items: center; justify-content: space-between; padding-top: .75rem; color: var(--arcade-ink); font-size: .75rem; }
+.controls button { flex-shrink: 0; min-height: 44px; padding: 0.5rem 0.75rem; border: 1px solid var(--arcade-muted); cursor: pointer; }
+.controls button:hover:not(:disabled) { border-color: var(--arcade-accent); color: var(--arcade-accent); }
+.controls button:disabled { opacity: 0.45; cursor: default; }
+.flightClue { margin-top: 1rem; padding: .75rem; background: #fff0c9; color: var(--arcade-ink); border-top: 2px dashed #aa8a55; border-radius: 2% 1% 3% 1%; }
+.flightClue summary { cursor: pointer; min-height: 44px; align-content: center; font-weight: 800; font-size: .875rem; }
+.flightClue summary:focus-visible { outline: 3px solid #a44316; outline-offset: 3px; }
+.flightClue p { font-size: .875rem; line-height: 1.65; margin: .75rem 0; }
+.flightClue blockquote { font-weight: 800; line-height: 1.6; }
+.flightClue small { display: block; font-size: .75rem; line-height: 1.6; }
+@media (max-width: 767px) {
+  .arcade { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0; }
+  .notes h2 { max-width: none; }
+  .records { gap: 2rem; }
+}
+@media (max-width: 380px) {
+  .machine { padding: .5rem; }
+  .machineLabel { font-size: .6875rem; gap: .5rem; }
+  .overlay { gap: .5rem; padding: .75rem .5rem; }
+  .crashDoodle { font-size: 2rem; }
+  .result strong { font-size: 2rem; }
+}

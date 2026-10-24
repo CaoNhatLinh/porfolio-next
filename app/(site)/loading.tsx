@@ -1,0 +1,1 @@
+export default function SiteLoading() { return <div className="site-shell grid min-h-screen place-items-center bg-[var(--ink)] text-[var(--paper)]"><p className="mono animate-pulse text-xs uppercase tracking-[.2em]">Loading / Cao Nhật Linh</p></div>; }
